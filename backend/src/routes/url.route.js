@@ -6,7 +6,7 @@ import limiter from '../middleware/limit.js';
 const router = express.Router();
 
 router.post('/urlShort',limiter,urlShortener);
-router.get('/:shortId',getRedirectOriginalUrl);
+router.get('/redirect/:shortId',getRedirectOriginalUrl);
 router.get('/:id',isAuth,getUrl);
 
 export default router;
