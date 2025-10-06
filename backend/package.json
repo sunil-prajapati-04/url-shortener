@@ -27,6 +27,7 @@
     "nodemon": "^3.1.10",
     "passport": "^0.7.0",
     "passport-google-oauth2": "^0.2.0",
+    "url-shortener": "file:..",
     "uuid": "^11.1.0"
   }
 }
