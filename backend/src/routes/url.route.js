@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.post('/urlShort',limiter,urlShortener);
 router.get('/redirect/:shortId',getRedirectOriginalUrl);
-router.get('/:id',isAuth,getUrl);
+router.get('/user/:id',isAuth,getUrl);
 
 export default router;

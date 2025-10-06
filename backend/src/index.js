@@ -51,7 +51,7 @@ app.use(passport.session());
 
 
 app.use('/woben/auth',authRoutes);
-app.use('/woben',urlRoutes);
+app.use('/woben/url',urlRoutes);
 
 
 if (process.env.NODE_ENV === "production") {
