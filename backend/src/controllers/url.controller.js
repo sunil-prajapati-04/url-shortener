@@ -7,7 +7,7 @@ export const urlShortener = async(req,res)=>{
     try {
         const {originalUrl} = req.body;
         const shortId = nanoid(6);
-        if(!originalUrl || (!originalUrl.startsWith("http://") && !originalUrl.startsWith("http://"))){
+        if(!originalUrl || (!originalUrl.startsWith("http://") && !originalUrl.startsWith("https://"))){
             return res.status(404).json({message:"Please Provide valid URL"});
         }
         const defaultUrl = "http://localhost:5000/woben/url"
