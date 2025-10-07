@@ -8,7 +8,7 @@ export const useUrlStore = create((set,get)=>({
 
     shortUrl:async(originalUrl)=>{
         try {
-         const res = await axiosInstance.post('/urlShort',{originalUrl});
+         const res = await axiosInstance.post('/url/urlShort',{originalUrl});
          set({yourUrl:res.data?.yourShortendUrl})
         } catch (error) {
           console.log("error in shortUrl",error);

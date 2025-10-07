@@ -7,11 +7,11 @@ export const urlShortener = async(req,res)=>{
     try {
         const {originalUrl} = req.body;
         const shortId = nanoid(6);
-        if(!originalUrl || !originalUrl.startsWith("https://")){
+        if(!originalUrl || (!originalUrl.startsWith("http://") && !originalUrl.startsWith("http://"))){
             return res.status(404).json({message:"Please Provide valid URL"});
         }
-        const defaultUrl = "http://localhost:5000/woben"
-        const shortendUrl = `${defaultUrl}/${shortId}`;
+        const defaultUrl = "http://localhost:5000/woben/url"
+        const shortendUrl = `${defaultUrl}/redirect/${shortId}`;
         const expiresAt = Date.now() + (6 * 24 * 60 * 60 * 1000); //6 Days
         const newUrl = new URL({
             originalUrl,
